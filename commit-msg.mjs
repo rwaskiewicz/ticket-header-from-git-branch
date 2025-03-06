@@ -73,7 +73,6 @@ try {
         exit(0); // already have the ticket number, exit
     }
 
-    // TODO: This doesn't work for reword + squash on 2 commits
     const ticketNumber = getTicketFromBranch() ?? getTicketFromMessage(commitMsg);
     if (!ticketNumber) {
         printWarningAndExitOk(`No ticket number found in branch name or commit message (expected format in either: '${ticketPrefix}[NUMBER]')`);
