@@ -1,10 +1,10 @@
-# Tickety Cricket
+# Git Branch to Ticket Header
 
-This repo contains a `commit-msg` hook for finding a string at the beginning of a git branch name and placing it in a git trailer.
+This repo contains a `commit-msg` hook for finding a string at the beginning of a git branch name and placing it at the start of a git commit message.
 
 ## What It Does
 
-For a git branch with the name `dx-1111/feat/add-cool-thing`, this hook parses the branch name, and adds the ticket value to the git message as a trailer.
+For a git branch with the name `dx-1111/feat/add-cool-thing`, this hook parses the branch name, and adds the ticket value to the start of the git message.
 
 ```bash
 $ git checkout -b dx-1111/feat/add-cool-thing
@@ -13,9 +13,8 @@ $ git add README.md
 $ git commit -m 'Add Hello World README'
 $ git log HEAD
 
-    Add Hello World README
+    DX-1111: Add Hello World README
 
-    Ticket: DX-1111
 ```
 
 ## Goals
@@ -26,7 +25,7 @@ $ git log HEAD
 
 ## Installation
 
-This hook requires bash and Node to be installed locally.
+This hook requires git, bash and Node to be installed locally.
 
 ### MacOS, Linux
 
